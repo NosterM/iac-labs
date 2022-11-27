@@ -14,12 +14,16 @@ permissions:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest", "windows-latest" ]
 
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     
     defaults:
       run:
         working-directory: ./example-app
+        shell: bash
 
     steps:
     - uses: actions/checkout@v3

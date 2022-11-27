@@ -124,6 +124,7 @@ jobs:
         
   unittestes:
     runs-on: ubuntu-latest
+    needs: [Lint,Fotmatter,seccurity]
     defaults:
       run:
         working-directory: ./example-app
